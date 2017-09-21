@@ -1,4 +1,4 @@
-$font-nav: #999
+$font-nav: #aaa
 $font-link: orange
 $font-main: gray
 $font-white: #fff
@@ -8,70 +8,91 @@ $no-phone: "(min-width: 768px)"
 $tablet: "(min-width: 768px) and (max-width: 991px)"
 $screen: "(min-width: 992px)"
 
-=my-responsive()
-	height: 100%
+img
+	height: auto
 	width: 100%
-	object-fit: cover
+
+*
+	outline: 1px solid red
 
 body 
 	font-family: 'Times New Roman', serif
 	color: $font-main
 	font-size: 16px
+	margin: 0
 
-.navbar-toggle 
-	padding-left: 0
-
-.navbar-toggle i 
-	font-size: 30px
-	border: 1px solid $font-nav
-	padding: 5px 10px
-	border-radius: 5px
-	margin-top: 10px
-	&:active 
-		color: $font-white
-		border-color: $font-white
+.container
+	max-width: 1200px
+	box-sizing: border-box
+	margin: 0 auto
+	padding-left: 10px
+	padding-right: 10px
 
 .my-background
 	background: $dark
 
-.navbar-inverse
-	@extend .my-background
-	.navbar-brand
-		height: auto
-		padding-top: 30px
-		padding-right: 0
-		&:hover
-			color: $font-nav	
-		&:focus 
-			color: $font-white
-	.navbar-nav > li > a:hover,
-	.navbar-nav > li > a:focus
-		color: $font-white
+.link a
+	text-decoration: none
+	color: inherit
 
-.navbar-header
-	.logo
-		font-size: 4rem
+.navbar
+	@extend .my-background
+	color: $font-nav
+	padding: 10px 0
+	.container
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+.menu
+	list-style-type: none
+	display: flex
+	li
+		margin: 0
+		padding: 20px 0
+		background-color: #111
+		a
+			text-transform: uppercase
+			text-align: center
+			padding: 20px 20px
+		&:hover
+			color: $font-white			
+
+.logo
+	display: block
+	&:hover
+		color: $font-white
+	span
+		font-size: 3rem
 	p
-		padding-top: 5px
+		margin: 0
 		margin-bottom: 0
 		font-size: 1rem
-		@extend .link
+		font-weight: bold
 		sub
-			font-size: 1.5rem
+			font-size: 1rem
 
 .text-orange
 	color: $font-link
 
 .gallery
-	text-align: center
+	.pictures
+		display: flex
+		justify-content: space-between
+	.tiles
+		display: flex
 
-.photo img
-	+my-responsive()
+.photo
+	display: block
+	border: 1px solid $font-nav
+	padding: 5px
+	max-height: 180px
+	max-width: 290px
 
-.link
+
+.go-to
 	font-weight: bold
 	p
-		display: inline-block
 		margin-right: 5px
 
 .link:hover,
@@ -92,10 +113,6 @@ body
 .story h1
 	margin-top: 0
 
-.list-unstyled li
-	border-bottom: 1px solid $font-main
-	padding: 5px 0
-
 .text-white
 	color: $font-white
 
@@ -107,71 +124,13 @@ body
 	text-align: center
 	h4
 		margin-bottom: 15px
+	li
+		border-bottom: 1px solid $font-main
+		padding: 5px 0
 
 footer
 	background: #111
 	p
 		text-align: center
 
-@media #{$no-phone}
-	nav li
-		margin: 25px 0
-		background: #000
 
-	.navbar-inverse .navbar-brand
-		&:focus
-			color: $font-nav
-		&:hover
-			color: $font-white
-
-	.navbar-inverse .navbar-nav > li > a
-		&:focus
-			color: $font-nav
-		&:hover
-			color: $font-white
-
-	.gallery
-		text-align: left
-		.img-thumbnail
-			width: 100%
-
-	.navbar-header 
-		.logo
-			font-size: 4.5rem
-		p
-			font-size: 1.5rem
-
-	.my-list
-		text-align: left
-
-	footer p
-		display: inline-block
-		&:last-child
-			float: right
-
-@media #{$tablet}
-	nav
-		text-align: center
-		ul
-			display: inline-block
-			&.navbar-right
-				margin: 0 auto
-				float: none !important
-
-	.navbar-nav li
-		margin-top: 0
-
-	.navbar-header
-		width: 100%
-		text-align: center
-		float: none
-		margin-top: 30px
-
-	.navbar-brand
-		float: none
-
-@media #{$screen}
-	.photo-2 .img-thumbnail
-		width: 100%
-	.top-margin
-		margin-top: 50px
