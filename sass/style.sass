@@ -43,12 +43,18 @@ body
 	text-decoration: none
 	color: inherit
 
+.link a:hover,
+	color: $font-nav
+
 .navbar
 	@extend .my-background
+	@extend .link
 	color: $font-nav
 	padding: 10px 0
 	.container
 		align-items: center
+		a:hover
+			color: $font-white
 
 .menu
 	list-style-type: none
@@ -62,14 +68,10 @@ body
 			text-transform: uppercase
 			align-items: center
 			padding: 20px 20px
-		&:hover
-			color: $font-white			
 
 .logo
 	display: block
 	margin-right: 20px
-	&:hover
-		color: $font-white
 	span
 		font-size: 3rem
 	p
@@ -183,8 +185,14 @@ footer
 		padding: 0
 	.logo
 		margin-right: 5%
-	nav .flex
+
+	.navbar .flex
 		justify-content: center
+		a:focus
+			color: $font-white
+	.gallery
+		a:focus
+			border: 1px solid orange
 
 @media (max-width: 767px)
 	.menu
