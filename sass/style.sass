@@ -4,9 +4,11 @@ $font-main: gray
 $font-white: #fff
 $dark: #333
 
-$no-phone: "(min-width: 768px)"
-$tablet: "(min-width: 768px) and (max-width: 991px)"
-$screen: "(min-width: 992px)"
+=flex()
+	display: flex
+	display: -webkit-box
+	display: -ms-flexbox
+	display: -webkit-flex
 
 img
 	height: auto
@@ -30,7 +32,7 @@ body
 	padding-right: 10px
 
 .flex
-	display: flex
+	+flex
 	flex-wrap: wrap
 	justify-content: space-between
 
@@ -50,8 +52,8 @@ body
 
 .menu
 	list-style-type: none
-	display: flex
-	padding: 0
+	+flex
+	@extend .padding-null
 	li
 		margin: 0
 		padding: 20px 0
@@ -97,7 +99,7 @@ body
 	box-sizing: border-box
 
 .go-to
-	display: flex
+	+flex
 	justify-content: flex-end
 	font-weight: bold
 	p
@@ -157,7 +159,7 @@ body
 		margin-bottom: 15px
 	ul
 		list-style-type: none
-		padding: 0
+		@extend .padding-null
 		li
 			border-bottom: 1px solid $font-main
 			padding: 5px 0
@@ -171,7 +173,7 @@ footer
 
 @media (max-width: 1200px)
 	.gallery,
-	.story
+	.story,
 		justify-content: center
 
 @media (max-width: 991px)
@@ -190,4 +192,10 @@ footer
 		justify-content: center
 		align-items: center		
 	.my-list
-		text-align: center	
+		text-align: center
+	footer
+		.flex
+			justify-content: center
+		p
+			margin-top: 5px
+			margin-bottom: 5px
