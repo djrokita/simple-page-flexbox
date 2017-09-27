@@ -15,8 +15,8 @@ img
 	width: 100%
 	object-fit: cover
 
-//*
-//	outline: 1px solid red
+*
+	outline: 1px solid red
 
 body 
 	font-family: 'Times New Roman', serif
@@ -49,17 +49,18 @@ body
 .navbar
 	@extend .my-background
 	@extend .link
+	@extend .top-padding
+	@extend .bottom-padding
 	color: $font-nav
-	padding: 10px 0
 	.container
 		align-items: center
 		a:hover
 			color: $font-white
-
+			
 .menu
 	list-style-type: none
 	+flex
-	@extend .padding-null
+	padding: 0
 	li
 		margin: 0
 		padding: 20px 0
@@ -126,6 +127,9 @@ body
 .top-margin
 	margin-top: 20px
 
+.padding-null
+	padding: 0
+
 .story
 	@extend .flex
 	justify-content: space-between
@@ -181,15 +185,18 @@ footer
 @media (max-width: 991px)
 	.text-center
 		text-align: center
-	.padding-null
-		padding: 0
 	.logo
 		margin-right: 5%
-
+	
+	.navbar 
+		padding-top: 0
+		padding-bottom: 0
+		
 	.navbar .flex
 		justify-content: center
 		a:focus
 			color: $font-white
+
 	.gallery
 		a:focus
 			border: 1px solid orange
