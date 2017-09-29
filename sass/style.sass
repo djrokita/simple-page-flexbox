@@ -14,7 +14,6 @@ img
 	height: auto
 	width: 100%
 	object-fit: cover
-	vertical-align: bottom
 
 //*
 //	outline: 1px solid red
@@ -44,7 +43,7 @@ body
 	text-decoration: none
 	color: inherit
 
-.link a:hover,
+.link a:hover
 	color: $font-nav
 
 .navbar
@@ -101,6 +100,8 @@ body
 	border: 1px solid $font-nav
 	padding: 5px
 	box-sizing: border-box
+	img
+		vertical-align: bottom
 
 .go-to
 	+flex
@@ -180,7 +181,7 @@ footer
 
 @media (max-width: 1200px)
 	.gallery,
-	.story,
+	.story
 		justify-content: center
 
 @media (max-width: 991px)
